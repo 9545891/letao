@@ -1,0 +1,37 @@
+.bg_body {
+    background-color: #222D32;
+}
+
+.container .login {
+    margin-top: 150px;
+}
+
+
+.container .login .header {
+    text-align: center;
+    color: #fff;
+    background-color: #337ab7;
+    padding: 10px 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+}
+
+.container .login .header h3 {
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.container .login .body {
+    background-color: #fff;
+    padding: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.container .login .body .btn-primary {
+    float: right;
+    background-color: #337ab7;
+}
