@@ -23,8 +23,9 @@ $(function () {
     // 左侧菜单切换效果
     $('.icon_menu').on('click', function () {
         $('.lt_aside').toggleClass('hidemenu')
-        $('.lt_main').toggleClass('hidemenu')
         $('.lt_top').toggleClass('hidemenu')
+        $('.lt_main').toggleClass('hidemenu')
+
     })
 
 

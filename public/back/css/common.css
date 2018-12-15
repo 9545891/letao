@@ -14,15 +14,19 @@ li {
 }
 
 .lt_aside {
+    top: 0;
+    left: 0;
     width: 180px;
     height: 100%;
     background-color: #222D32;
     position: fixed;
+    z-index: 999;
+    transition: all 1s;
 
 }
 
 .lt_aside.hidemenu {
-    padding-left: -180px;
+    left: -180px;
 }
 
 .lt_aside .brand {
@@ -85,6 +89,7 @@ li {
     width: 100%;
     background-color: #3C8DBC;
     padding-left: 180px;
+    transition: all 1s;
 }
 
 .lt_main.hidemenu {
@@ -92,6 +97,7 @@ li {
 }
 
 .lt_main .lt_top {
+    transition: all 1s;
     background-color: #3C8DBC;
     height: 50px;
     line-height: 50px;
