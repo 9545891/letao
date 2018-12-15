@@ -5,14 +5,17 @@ a:hover,
 a:active {
   text-decoration: none;
 }
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 .mt_20 {
   margin-top: 20px;
 }
+
 .red {
   color: #A94442;
 }
@@ -27,6 +30,7 @@ ul {
   z-index: 999;
   transition: all 1s;
 }
+
 .lt_aside.hidemenu {
   left: -180px;
 }
@@ -39,14 +43,17 @@ ul {
   text-align: center;
   background-color: #367FA9;
 }
+
 .lt_aside .brand a {
   color: #fff;
   font-size: 25px;
 }
+
 .lt_aside .user {
   padding-top: 30px;
   height: 180px;
 }
+
 .lt_aside .user img {
   width: 80px;
   height: 80px;
@@ -54,6 +61,7 @@ ul {
   display: block;
   margin: 0 auto;
 }
+
 .lt_aside .user p {
   height: 40px;
   line-height: 40px;
@@ -70,16 +78,20 @@ ul {
   padding-left: 40px;
   border-left: 3px solid transparent;
 }
+
 .lt_aside .nav a.current {
   background-color: #1D1F21;
   border-left: 3px solid #006699;
 }
+
 .lt_aside .nav a i {
   margin-right: 4px;
 }
+
 .lt_aside .nav .child {
   display: none;
 }
+
 .lt_aside .nav .child a {
   padding-left: 60px;
 }
@@ -91,6 +103,7 @@ ul {
   height: 2000px;
   transition: all 1s;
 }
+
 .lt_main.hidemenu {
   padding-left: 0;
 }
@@ -105,9 +118,11 @@ ul {
   padding-left: 180px;
   transition: all 1s;
 }
+
 .lt_topbar.hidemenu {
   padding-left: 0;
 }
+
 .lt_topbar .icon_left,
 .lt_topbar .icon_right {
   width: 50px;
