@@ -38,7 +38,7 @@ $(function () {
 
 
     // 发送ajax请求
-    $('#btn_logout').on('click', function () {
+    $('#logoutBtn').on('click', function () {
         $.ajax({
             type: "get",
             url: "/employee/employeeLogout",
