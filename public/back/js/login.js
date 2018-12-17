@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   // 1.验证表单
 
   //使用表单校验插件
@@ -61,14 +61,14 @@ $(function() {
   // 2.阻止默认提交行为
   // 通过ajax提交
 
-  $('#form').on('success.form.bv', function(e) {
+  $('#form').on('success.form.bv', function (e) {
     e.preventDefault()
     $.ajax({
       type: 'post',
       url: '/employee/employeeLogin',
       data: $('#form').serialize(),
       dataType: 'json',
-      success: function(res) {
+      success: function (res) {
         if (res.success) {
           location.href = 'index.html'
         }
@@ -90,7 +90,7 @@ $(function() {
 
   // 3.表单重置功能
 
-  $('[type="reset"]').click(function() {
+  $('[type="reset"]').click(function () {
     $('#form')
       .data('bootstrapValidator')
       .resetForm()

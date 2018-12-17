@@ -137,6 +137,10 @@ li {
   padding: 10px;
 }
 
+.lt_content .table {
+  margin-top: 20px;
+}
+
 .lt_content .table th,
 .lt_content .table td {
   text-align: center;
