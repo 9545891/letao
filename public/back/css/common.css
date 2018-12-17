@@ -63,8 +63,7 @@ li {
   color: #fff;
 }
 
-.lt_aside .nav {
-}
+.lt_aside .nav {}
 
 .lt_aside .nav a {
   text-decoration: none;
@@ -119,12 +118,13 @@ li {
 .red {
   color: #a94442;
 }
+
 .lt_content {
   background-color: #fff;
+  padding: 20px;
 }
-.lt_content .breadcrumb {
-  margin: 20px 15px;
-}
+
+
 .echarts_box .echarts_left {
   height: 400px;
   width: 48%;
@@ -135,4 +135,10 @@ li {
   height: 400px;
   width: 48%;
   padding: 10px;
+}
+
+.lt_content .table th,
+.lt_content .table td {
+  text-align: center;
+  vertical-align: middle;
 }
