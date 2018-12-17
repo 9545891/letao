@@ -3,7 +3,7 @@
  */
 
 
-$(function () {
+$(function() {
 
   /*
    * 1. 进行表单校验配置
@@ -15,9 +15,9 @@ $(function () {
 
     // 配置图标
     feedbackIcons: {
-      valid: 'glyphicon glyphicon-ok', // 校验成功
-      invalid: 'glyphicon glyphicon-remove', // 校验失败
-      validating: 'glyphicon glyphicon-refresh' // 校验中
+      valid: 'glyphicon glyphicon-ok',         // 校验成功
+      invalid: 'glyphicon glyphicon-remove',   // 校验失败
+      validating: 'glyphicon glyphicon-refresh'  // 校验中
     },
 
     // 配置校验字段    需要先给input框配置 name
@@ -50,7 +50,7 @@ $(function () {
             message: "密码不能为空"
           },
           // 长度校验
-          stringLength: {
+          stringLength:{
             min: 6,
             max: 12,
             message: "密码长度必须是6-12位"
@@ -66,10 +66,10 @@ $(function () {
   });
 
   /*
-   * 2. 注册表单校验成功事件, 在校验成功时, 会触发
-   *    在事件中阻止默认的提交(会跳转), 通过ajax进行提交(异步)
-   * */
-  $('#form').on("success.form.bv", function (e) {
+  * 2. 注册表单校验成功事件, 在校验成功时, 会触发
+  *    在事件中阻止默认的提交(会跳转), 通过ajax进行提交(异步)
+  * */
+  $('#form').on("success.form.bv", function( e ) {
     // 阻止默认的提交
     e.preventDefault();
 
@@ -77,22 +77,22 @@ $(function () {
     $.ajax({
       type: "post",
       url: "/employee/employeeLogin",
-      data: $('#form').serialize(), // 表单序列化
+      data: $('#form').serialize(),  // 表单序列化
       dataType: 'json',
-      success: function (info) {
-        console.log(info);
-        if (info.success) {
+      success: function( info ) {
+        console.log( info );
+        if ( info.success ) {
           // 成功跳转到首页
           location.href = "index.html";
         }
-        if (info.error === 1000) {
+        if ( info.error === 1000 ) {
           // alert("用户名不存在")
           // 调用实例的更新校验方法 updateStatus 将校验状态更新失败
           // 参数1: 字段名称 (username)
           // 参数2: 校验状态 NOT_VALIDATED未校验, VALIDATING校验中, INVALID失败 or VALID成功
           $('#form').data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
         }
-        if (info.error === 1001) {
+        if ( info.error === 1001 ) {
           //alert("密码错误")
           $('#form').data("bootstrapValidator").updateStatus("password", "INVALID", "callback")
         }
@@ -104,14 +104,14 @@ $(function () {
 
 
   /*
-   * 3. 表单重置功能
-   *    $('#form').data("bootstrapValidator") 创建插件实例
-   *    resetForm()     没传参或者传false,  只会重置校验状态
-   *    resetForm(true) 内容和校验状态都重置
-   *
-   *    由于 reset 按钮, 本身就可以重置内容, 所以上面两个可以, 需要的是重置状态
-   * */
-  $('[type="reset"]').click(function () {
+  * 3. 表单重置功能
+  *    $('#form').data("bootstrapValidator") 创建插件实例
+  *    resetForm()     没传参或者传false,  只会重置校验状态
+  *    resetForm(true) 内容和校验状态都重置
+  *
+  *    由于 reset 按钮, 本身就可以重置内容, 所以上面两个可以, 需要的是重置状态
+  * */
+  $('[type="reset"]').click(function() {
     // 重置校验状态
     $('#form').data("bootstrapValidator").resetForm();
   })
