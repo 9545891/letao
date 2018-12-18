@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
-    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
-    <link rel="stylesheet" href="./css/common.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css" />
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css" />
+    <link rel="stylesheet" href="./css/common.css" />
     <title>乐淘电商</title>
 </head>
 
@@ -16,12 +16,10 @@
     <!-- 左侧导航栏 -->
     <div class="lt_aside">
         <!-- 标题 -->
-        <div class="brand">
-            <a href="index.html">耶温sama</a>
-        </div>
+        <div class="brand"><a href="index.html">耶温sama</a></div>
         <!-- 用户头像 -->
         <div class="user">
-            <img src="./images/02.jpg" alt="">
+            <img src="./images/02.jpg" alt="" />
             <p>超级管理员</p>
         </div>
         <!-- 导航内容 -->
@@ -29,14 +27,12 @@
             <ul>
                 <li>
                     <a href="user.html">
-                        <i class="glyphicon glyphicon-user"></i>
-                        <span>用户管理</span>
+                        <i class="glyphicon glyphicon-user"></i> <span>用户管理</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" class="category">
-                        <i class="glyphicon glyphicon-list"></i>
-                        <span>分类管理</span>
+                        <i class="glyphicon glyphicon-list"></i> <span>分类管理</span>
                     </a>
                     <div class="child" style="display:block">
                         <a href="first.html">一级分类</a>
@@ -45,13 +41,11 @@
                 </li>
                 <li>
                     <a href="product.html">
-                        <i class="glyphicon glyphicon-tags"></i>
-                        <span>商品管理</span>
+                        <i class="glyphicon glyphicon-tags"></i> <span>商品管理</span>
                     </a>
                 </li>
             </ul>
         </div>
-
     </div>
     <div class="lt_main">
         <div class="lt_top">
@@ -69,33 +63,144 @@
                 <li class="active">二级分类</li>
             </ol>
 
+
+
+            <!-- 添加按钮 -->
+            <button class="btn btn-default" id="btn-add">添加分类</button>
+            <!-- 二级分类列表 -->
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>一级分类名称</th>
+                        <th>二级分类名称</th>
+                        <th>二级分类logo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--  -->
+                </tbody>
+            </table>
+
+
+            <!-- 翻页 -->
+            <div class="pull-right">
+                <ul id="pagintor">
+                </ul>
+            </div>
+
         </div>
     </div>
+
+    <!-- 模态框  添加 -->
+    <div class="modal fade" id="firstModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <form id="form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <!-- bootstrap 下拉菜单 -->
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="true" type="button">
+                                    <span id="dropdowntext">请选择一级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <!-- 挖坑 -->
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                </ul>
+                            </div>
+                            <input type="hidden" name="categoryId" id="categoryId">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="brandName" id="" placeholder="请输入二级分类名称">
+                        </div>
+                        <div class="form-group">
+                            <label class="btn btn-default " for="fileupload">选择图片</label>
+                            <input type="file" name="pic1" data-url="/category/addSecondCategoryPic" id="fileupload"
+                                style="display:none">
+                        </div>
+                        <div class="form-group" id="imgBox">
+                            <img src="./images/none.png" style="width:100px" alt="">
+
+                            <!-- 隐藏域 ，提交数据 -->
+                            <input type="hidden" name="brandLogo">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary" id="addBtn">添加</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 模态框 关闭 -->
     <div class="modal fade" id="logoutModal" tabindex="-1">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
                     <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+                    <p class="red">
+                        <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？
+                    </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消
+                    </button>
+                    <button type="button" class="btn btn-primary" id="logoutBtn">
+                        退出
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
+<script type="text/html" id="second_list">
+    {{each rows v i}}
+    <tr>
+        <td>{{ i + 1 + (page-1) * size}}</td>
+        <td>{{ v.categoryName }}</td>
+        <td>{{ v.brandName }}</td>
+        <td><img src="{{v.brandLogo}}" style="height:50px"></td>
+    </tr>
+    {{/each}}
+</script>
+
+<script type="text/html" id="lis">
+    {{each rows v i}}
+    <li><a data-id="{{v.id}}" href="#">{{v.categoryName}}</a></li>
+    {{/each}}
+</script>
+
+
 <script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.js"></script>
+<!-- 表单验证 -->
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<!-- 模板框架 -->
+<script src="./lib/artTemplate/template-web.js"></script>
+<!-- 进度条 -->
 <script src="./lib/nprogress/nprogress.js"></script>
-<script src="./lib/echarts/echarts.min.js"></script>
+<!-- 翻页 -->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/isLogin.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/second.js"></script>
 
 </html>
