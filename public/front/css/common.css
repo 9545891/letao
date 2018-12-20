@@ -1,0 +1,105 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    max-width: 640px;
+    min-width: 320px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 45px;
+    overflow: hidden;
+    padding-bottom: 55px;
+}
+
+.container .header {
+    text-align: center;
+    height: 45px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #006699;
+    color: #fff;
+
+}
+
+.container .header h3 {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 45px;
+    margin: 0;
+}
+
+.icon_right,
+.icon_left {
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    position: absolute;
+    top: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.icon_left {
+    left: 0;
+}
+
+.icon_right {
+    right: 0;
+}
+
+
+.footer {
+    height: 55px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #006699;
+}
+
+.footer ul {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.footer ul li {
+    padding: 8px 0;
+    float: left;
+    width: 25%;
+}
+
+.footer ul li a i {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    padding: 2px;
+}
+
+.footer ul li a {
+    text-align: center;
+}
+
+.footer ul li a p {
+    color: #fff;
+}
+
+.footer ul li a.current p,
+.footer ul li a.current i {
+    color: orange;
+}
